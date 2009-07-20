@@ -1,4 +1,4 @@
-=== General Info ====
+=== General Info ===
 
 To record a movie, you need to download DeSmuME first.
 http://tasvideos.org/forum/t/8008
