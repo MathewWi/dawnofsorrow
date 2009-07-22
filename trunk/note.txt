@@ -26,7 +26,7 @@ Destroy the castle! (Menace must not be appeared)
 
 == Current (redo) plan for glitched run ==
 
-Defeat Balore without using Mind Up
+Defeat Balore without using Mind Up *
 Go to the save room of Garden of Madness (on the way, you may need to use 2 Potions?) and save the game
 Get Yorick soul on the way
 Battle with Dmitrii with using Yorick and Mind Up
