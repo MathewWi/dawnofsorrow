@@ -113,7 +113,8 @@ HP 192, Exp 104
 |020F721B|lower 4 bits|Rosary|
 |020F7226|lower 4 bits|Chaos Ring|
 ||||
-|020F6E20|2 bytes|Room number for start from suspend|
+|020F6E20|1 bytes|Room X position for start from suspend|
+|020F6E22|1 bytes|Room Y position for start from suspend|
 |020F6DFC|4 bytes|If the value bitand 0x44000007 is non-zero, disable Suspend|
 |020F7018|4 bytes|X position for start from suspend|
 |020F701C|4 bytes|Y position for start from suspend|
