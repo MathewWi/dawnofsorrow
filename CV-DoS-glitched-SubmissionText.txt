@@ -4,10 +4,14 @@ __Watch online__: (TODO: set URL) YouTube, Niconico
 Castlevania: Dawn of Sorrow is a one of famous Castlevania games, and it is also the sequel to [1129M|Castlevania: Aria of Sorrow (GBA)].
 
 This run aims for the fastest time to complete the game with the good ending, on normal difficulty.
-The run starts with no predefined save, but it completes the game under 10 minutes,
+The run starts with no predefined save, but it completes the game in mm minutes and ss.ms seconds,
 by utilizing a variant of a famous zipping glitch.
+The in-game completion time of this run should be 00:mm:ss (xx frames),
+but since game timers have been overwritten by a glitch,
+it is shown differently after the game has been completed.
 
 * Emulator used: [=forum/p/206355#206355|DeSmuME 0.9.2+] (0.9.2-rr does not render the background in certain rooms)
+** The game sometimes lags more than the real console, because of the emulator's inaccurate timing emulation
 * Aims for fastest time (to get the good ending)
 * Abuses programming errors in the game / Uses zipping glitch
 * Manipulates luck (for soul/item drops, boss moves, etc.)
@@ -17,6 +21,20 @@ by utilizing a variant of a famous zipping glitch.
 
 ! About the run
 
+The run completes the game in the following process.
+
+# Prologue
+# Meet Yoko and Julius, obtain Magic Seal 1
+# Obtain Axe from Axe Armor
+# Defeat Flying Armor
+# Defeat Balore
+# Save game for later glitch use
+# Obtain Magic Seal 2
+# Defeat Dmitrii
+# Perform zipping to collect achieve things and suspend/restart the game
+# Go to Warp Room and warp to The Abyss. The castle will self-destruct in a few seconds
+
+I'd never thought that I would invent such a odd route.
 In fact, before I met DeSmuME-rerecording, I had never considered about the speedrun of the game.
 
 One day, I wanted to try recording a DS TAS movie with a new emulator,
@@ -25,6 +43,14 @@ I learned some of the basic mechanisms of the game through the recording, and
 it told me that I can improve [=forum/p/200512#200512|Atma's demonstration TAS in the forum].
 This is why I started working on the game suddenly. I had never expected that I would make a Castlevania TAS.
 
-After I decided to work on the game, I watched [http://www.youtube.com/watch?v=ws4714qAvk4|Groobo's semi-TAS video] on YouTube (and [http://www.youtube.com/watch?v=Qa0GjrK6KoY|Satoryu's non tool-assisted speedrun]).
+After I decided to work on the game, I watched [http://www.youtube.com/watch?v=ws4714qAvk4|Groobo's semi-TAS video]
+on YouTube (and [http://www.youtube.com/watch?v=Qa0GjrK6KoY|Satoryu's non tool-assisted speedrun]).
 
-The video completes the game in 28:58, by utilizing famous two glitches. One is a way to open a gate from the opposite side of a switch by Cutall's special attack, and the other is the one called "Succubus glitch" which allows us to go through/into a wall, and get a bunch of souls and items (details are described later).
+The video completes the game in 28:58, by utilizing famous two glitches.
+One is a way to open a gate from the opposite side of a switch by Cutall's special attack,
+and the other is the one called "Succubus glitch" which allows us to go through/into a wall,
+and get a bunch of souls and items (details are described later).
+My original aim was to optimize his speedrun, and I assumed the completion time would be 20+ minutes at best.
+
+However, a revolution happens by chance.
+When I was playing with Succubus glitch to understand how it works, I noticed that a zipping could be performed with Axe.
