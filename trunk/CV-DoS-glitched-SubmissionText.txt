@@ -10,7 +10,7 @@ The in-game completion time of this run should be 00:mm:ss (xx frames),
 but since game timers have been overwritten by a glitch,
 it is shown differently after the game has been completed.
 
-* Emulator used: [=forum/p/206355#206355|DeSmuME 0.9.2+] (0.9.2-rr does not render the background in certain rooms)
+* Emulator used: [=forum/p/210670#210670|DeSmuME 0.9.4+]
 ** The game sometimes lags more than the real console, because of the emulator's inaccurate timing emulation
 * Aims for fastest time (to get the good ending)
 * Abuses programming errors in the game / Uses zipping glitch
