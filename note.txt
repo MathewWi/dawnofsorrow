@@ -3,7 +3,7 @@
 
 To record a movie, you need to download DeSmuME first.
 http://tasvideos.org/forum/t/8008
-Our glitched run uses 0.9.2-rr (0.9.2+), 0.9.4 desyncs early.
+Our glitched run uses 0.9.4+ now.
 
 DO NOT UPLOAD THE ROM TO THE PROJECT.
 DO NOT ASK HOW TO DOWNLOAD THE ROM.
@@ -77,7 +77,12 @@ Dancer          -16
 Great Armor *2  -41|-37 (Exp 180; take 18 damage even if Soma equipped Dracula's Tunic)
 
 HP 192, Exp 104
-36 + 22 + 18 + 37 + 37 + 18 + 18 = 186
+
+To the ending:
+36 + 22 + 18 + 37 + 37 + 18 + 18 = 186 (needs Dracula's Tunic)
+To Dmitrii:
+36 + 22 + 18 + 18 + 18 + 37 + 37 = 186
+36 + 22 + 22 + 22 + 41 + 41 = 184
 
 === Important memory addresses for Succubus glitch application ===
 
