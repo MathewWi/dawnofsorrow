@@ -1,5 +1,5 @@
 
-30
+32
 00000	020CAA40	d	h	0	X position
 00001	020CAA44	d	h	0	Y position
 00002	020CA95C	d	h	0	X position (next)
@@ -25,8 +25,10 @@
 00016	020F7018	d	h	0	X position for Suspend
 00017	020F701C	d	h	0	Y position for Suspend
 00018	020F7256	w	h	0	Pause/Suspend Lock
-00019	020D8913	b	u	0	Yorick Invisibility
-0001A	020F7259	b	u	0	Hard Mode
-0001B	020F718A	b	h	0	Menace flags
-0001C	020F7187	b	h	0	"Warp Room" Message
-0001D	020F71A8	w	h	0	Warp Rooms Activated
+00019	020D8AA8	w	u	0	Yorick HP
+0001A	020D8913	b	u	0	Yorick Invisibility
+0001B	020D887C	d	h	0	Yorick X position
+0001C	020F7259	b	u	0	Hard Mode
+0001D	020F718A	b	h	0	Menace flags
+0001E	020F7187	b	h	0	"Warp Room" Message
+0001F	020F71A8	w	h	0	Warp Rooms Activated
