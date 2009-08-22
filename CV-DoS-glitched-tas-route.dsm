@@ -1,9 +1,9 @@
 version 1
-emuVersion 90300
+emuVersion 90400
 rerecordCount 21766
-romFilename 0121 - Castlevania - Dawn of Sorrow (U).zip
+romFilename 0121 - Castlevania - Dawn of Sorrow (U).nds
 romChecksum 135737F6
-romSerial 
+romSerial CASTLEVANIA1_ACVEA4
 guid D66CE184-52AE-4990-F1F1-BBE9EBB3A6DB
 useExtBios 0
 comment author gocha
