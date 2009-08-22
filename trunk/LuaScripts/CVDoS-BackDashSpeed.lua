@@ -31,5 +31,8 @@ emu.registerafter(function()
   end
   distance = distance + xv
   frames = frames + 1
-  gui.text(157, 369, string.format("%08.2f/f", math.abs(distance) / frames))
+end)
+
+gui.register(function()
+  agg.text(154, 369, string.format("%08.2f/f", math.abs(distance) / frames))
 end)
