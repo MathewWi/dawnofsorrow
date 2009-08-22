@@ -24,13 +24,13 @@ function cvdosPosToMapFlag(x, y)
   return pos, mask
 end
 
-emu.registerafter(function()
+gui.register(function()
   local x = memory.readbyte(0x0210F018)
   local y = memory.readbyte(0x0210F014)
   local i = (y * 16) + x
   local pos, mask = cvdosPosToMapFlag(x, y)
-  gui.text(144, 4, string.format("%08X:%02x\n[%04X-%04X]\n[%04X-%04X]\n(%03d/%X,%03d)", pos, mask,
-           cvdosPosToMapFlag(x, 0) % 0x10000, cvdosPosToMapFlag(bit.bor(x, 0x0f), 255) % 0x10000,
-           cvdosPosToMapFlag(x + 0x10, 0) % 0x10000, cvdosPosToMapFlag(bit.bor(x, 0x0f) + 0x10, 255) % 0x10000,
-           x, x % 16, y))
+  agg.text(140, 5, string.format("%08X:%02x", pos, mask))
+  agg.text(140, 24, string.format("[%04X-%04X]", cvdosPosToMapFlag(x, 0) % 0x10000, cvdosPosToMapFlag(bit.bor(x, 0x0f), 255) % 0x10000))
+  agg.text(140, 43, string.format("[%04X-%04X]", cvdosPosToMapFlag(x + 0x10, 0) % 0x10000, cvdosPosToMapFlag(bit.bor(x, 0x0f) + 0x10, 255) % 0x10000))
+  agg.text(140, 62, string.format("(%03d/%X,%03d)", x, x % 16, y))
 end)
