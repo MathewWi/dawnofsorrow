@@ -36,15 +36,22 @@ Goal
 
 == Cutscene Zipping at Dmitrii ==
 
+Sectors:
+[6EED-70EB]
+[6F48-7147]
+[6FA4-71A3]
+[7000-71FF]
+[705C-725B]
+[70B8-72B7]
+...
+
 What to do is:
-- [4] set non zero value to higher 4 bits of $020F70EB (Black Panther)
-- [1] set non zero value to lower 4 bits of $020F710C (Hippogryph; optional)
-- [1] set non zero value to lower 4 bits of $020F720E (Dracula's Tunic; optional)
-- [2] set non zero value to higher 4 bits of $020F7216 (Death's Robe; optional)
-- [2] set non zero value to higher 4 bits of $020F710A (Malphas; optional)
-- [2] set $30 to $020F718A (Menace skip)
-- [3] set bit $08 to $020F7187 for "Warp Room" message skip (optional)
-- [3] set bit $08 to $020F71A9 for the warp room to The Abyss
+- [1.4] set non zero value to higher 4 bits of $020F70EB (Black Panther)
+- [2.1] set non zero value to lower 4 bits of $020F710C (Hippogryph; optional)
+- [2.2] set non zero value to higher 4 bits of $020F710A (Malphas; optional)
+- [3.2] set $30 to $020F718A (Menace skip)
+- [3.3] set bit $08 to $020F7187 for "Warp Room" message skip (optional)
+- [4.3] set bit $08 to $020F71A9 for the warp room to The Abyss
 
 Some other dangerous addresses:
 - $020F7018 - X position for start from suspend
