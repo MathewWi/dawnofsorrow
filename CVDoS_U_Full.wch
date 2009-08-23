@@ -30,9 +30,9 @@
 0001B	020F7187	b	h	0	"Warp Room" Message
 0001C	020F71A8	w	h	0	Warp Rooms Activated
 0001D	020D36A8	w	s	0	Flying Armor HP
-0001E	020D3513	b	u	0	Balore invincibility #1
-0001F	020D3514	b	u	0	Balore invincibility #2
-00020	020D3515	b	u	0	Balore invincibility #3
+0001E	020D3513	b	u	0	Flying Armor invincibility #1
+0001F	020D3514	b	u	0	Flying Armor invincibility #2
+00020	020D3515	b	u	0	Flying Armor invincibility #3
 00021	020D26E8	w	s	0	Balore HP
 00022	020D2553	b	u	0	Balore invincibility #1
 00023	020D2554	b	u	0	Balore invincibility #2
