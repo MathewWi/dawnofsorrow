@@ -4,14 +4,15 @@ __Watch online__: (TODO: set URL) YouTube, Niconico
 Castlevania: Dawn of Sorrow is a one of famous Castlevania games, and it is also the sequel to [1129M|Castlevania: Aria of Sorrow (GBA)].
 
 This run aims for the fastest time to complete the game with the good ending, on normal difficulty.
-The run starts with no predefined save, but it completes the game in mm minutes and ss.ms seconds,
+The run starts with no predefined save, but it completes the game in 8 minutes and 20.11 seconds,
 by utilizing a variant of a famous zipping glitch.
-The in-game completion time of this run should be 00:mm:ss (xx frames),
+The in-game completion time of this run should be 00:07:18 (26310 frames),
 but since game timers have been overwritten by a glitch,
 it is shown differently after the game has been completed.
 
 * Emulator used: [=forum/p/210670#210670|DeSmuME 0.9.4+]
-** The game sometimes lags more than the real console, because of the emulator's inaccurate timing emulation
+** The game sometimes lags more than the real console, because of the emulator's inaccurate timing emulation.
+** I recommend OpenGL. Both OpenGL and SoftRasterizer work well, but I think SoftRasterizer causes a minor display glitch.
 * Aims for fastest time (to get the good ending)
 * Abuses programming errors in the game / Uses zipping glitch
 * Manipulates luck (for soul/item drops, boss moves, etc.)
@@ -34,6 +35,18 @@ The run completes the game in the following process.
 # Perform zipping to collect achieve things and suspend/restart the game
 # Go to Warp Room and warp to The Abyss. The castle will self-destruct in a few seconds
 
+It is well known that the famous zipping glitch, which is called Succubus glitch, allows you to obtain a bunch of souls and items immediately.
+That Succubus glitch is used in a few of speedruns. However, they needed to get to The Pinnacle to obtain Succubus soul.
+
+While making this run, I invented a variation of Succubus glitch.
+It allows me to perform a zipping much earlier than before.
+
+
+
+
+
+
+
 I'd never thought that I would invent such a odd route.
 In fact, before I met DeSmuME-rerecording, I had never considered about the speedrun of the game.
 
@@ -54,3 +67,5 @@ My original aim was to optimize his speedrun, and I assumed the completion time 
 
 However, a revolution happens by chance.
 When I was playing with Succubus glitch to understand how it works, I noticed that a zipping could be performed with Axe.
+On the other hand, I guessed that a cutscene after a boss battle also can interrupt a special attack.
+I tried to perform that at Flying Armor battle with Axe, and I proved that my guess was true.
