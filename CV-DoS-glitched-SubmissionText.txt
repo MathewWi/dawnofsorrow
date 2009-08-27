@@ -35,13 +35,16 @@ The run completes the game in the following process.
 # Perform zipping to collect achieve things and suspend/restart the game
 # Go to Warp Room and warp to The Abyss. The castle will self-destruct in a few seconds
 
-It is well known that the famous zipping glitch, which is called Succubus glitch, allows you to obtain a bunch of souls and items immediately.
-That Succubus glitch is used in a few of speedruns. However, they needed to get to The Pinnacle to obtain Succubus soul.
+It is well known that the famous zipping glitch, which is called Succubus glitch,
+allows you to obtain a bunch of souls and items immediately.
+That Succubus glitch is used in a few of speedruns. However, they needed to get to
+The Pinnacle to obtain Succubus soul.
 
-While making this run, I invented a variation of Succubus glitch.
-It allows me to perform a zipping much earlier than before.
-
-
+While making this run, I invented a variation of Succubus glitch,
+a method to interrupt special attack by a cutscene.
+It allowed me to perform a zipping much earlier than before.
+Moreover, I enthusiastically investigated what can be done by the zipping,
+and I finally concluded that the last warp room can be activated and also Menace can be skipped.
 
 
 
