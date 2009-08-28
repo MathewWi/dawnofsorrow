@@ -1,14 +1,13 @@
 
-__Watch online__: (TODO: set URL) YouTube, Niconico
-
-Castlevania: Dawn of Sorrow is a one of famous Castlevania games, and it is also the sequel to [1129M|Castlevania: Aria of Sorrow (GBA)].
+Castlevania: Dawn of Sorrow is a one of famous Castlevania games,
+and it is also the sequel to [1129M|Castlevania: Aria of Sorrow (GBA)].
 
 This run aims for the fastest time to complete the game with the good ending, on normal difficulty.
 The run starts with no predefined save, but it completes the game in 8 minutes and 20.11 seconds,
 by utilizing a variant of a famous zipping glitch.
 The in-game completion time of this run should be 00:07:18 (26310 frames),
 but since game timers have been overwritten by a glitch,
-it is shown differently after the game has been completed.
+it is shown as 00:43:43 after the game has been completed.
 
 * Emulator used: [=forum/p/210670#210670|DeSmuME 0.9.4+]
 ** The game sometimes lags more than the real console, because of the emulator's inaccurate timing emulation.
@@ -20,7 +19,7 @@ it is shown differently after the game has been completed.
 * Genre: Action, Platform, RPG
 * Colors a warp room
 
-! About the run
+!! About the run
 
 The run completes the game in the following process.
 
@@ -46,11 +45,124 @@ It allowed me to perform a zipping much earlier than before.
 Moreover, I enthusiastically investigated what can be done by the zipping,
 and I finally concluded that the last warp room can be activated and also Menace can be skipped.
 
+Since the emulator generates a ridiculous amount of lags,
+I did not mind lags and 1 frame losses very strictly
+(still I generally did my best, of course!).
+Instead, I tried to optimize the whole route/strategy hard,
+and also to discover general tricks of the game.
+
+!! Tricks
+
+Here I show you what I have found.
+
+! Backdash
+
+There are two methods of move, backdash+jump and backdash+crouching.
+I compared their average speeds to see which is faster. I show the comparison on flat ground below.
+
+* Backdash+jump: (13784+13232+12680+12128+11576+11024+10472+9920+9368+8816+8264+7712)/12 = 10748 
+* Backdash+crouching: (13784+13232+12680+12128+11576+11024+8624+0)/8 = 10381 (8 frame pattern = fastest one)
+
+That is why Soma jumps again and again.
+Crouching is used as an alternative move method,
+when Soma is on a downslope, or when Soma wants to jump earlier.
+Sometimes, it is also used for some luck-manipulations.
+
+Actually, I also considered about one more method, "forward, backward + backdash, release".
+It has never been used since it was slower than the two methods above.
+
+! Motion cancels
+
+* Backdash can cancel an attack motion. It is a well-known behavior.
+* Landing can cancel an attack motion of some weapons. It is a well-known behavior, too.
+* Axe Armor's ability can cancel a landing motion after damage.
+* To cancel Black Panther's ability just before landing can cancel a landing motion.
+
+! Randomness
+
+Some rooms (more precisely, enemies, backgrounds, and other effects) change the randomness on every frame, some rooms do not.
+
+Soma can affect the randomness at least by a normal attack (changes it once),
+backdashing (changes it while doing that), or turning around (changes it once).
+It cannot be changed by jumping, crouching, or using a soul that I used in the run.
+
+Backdash+crouching is a handy way to manipulate randomness without losing speed much.
+The fastest way to change randomness greatly is something like autofiring the left or right key
+at the right timing (I did not use such in the run, so I am quite not sure).
+
+! Go down floating footholds without losing speed (not used)
+
+Here is the [http://www.youtube.com/watch?v=paUs8h3Quqg|demonstration video (youtube)].
+
+I just discovered it after I finished the run, so I cannot tell you the detail at present.
+I assume that it happens under a limited pixel conditions.
+This trick might improve the run a little. I hope it will because it looks good.
+
+! General info about zipping
+
+When Soma goes outside the room, the game writes "visited" flag to abnormal location.
+As a result, it causes various things like the run has done.
+
+In other words, the write address is determined from Soma's location.
+I studied how to calculate the exact write address from Soma's position,
+and wrote up a lua script which shows the write address in realtime.
+It definitely helped me to consider the optimal route of the zipping part.
+
+ -- Address view for memory writing with zipping
+ -- Open the memory viewer to see what's actually going on.
+ 
+ if not emu then
+   error("This script runs under DeSmuME.")
+ end
+ 
+ -- require("bit")
+ local bit = {}
+ bit.band = AND
+ bit.bor  = OR
+ bit.bxor = XOR
+ function bit.lshift(num, shift) return SHIFT(num, -shift) end
+ function bit.rshift(num, shift) return SHIFT(num,  shift) end
+ 
+ function cvdosPosToMapFlag(x, y)
+   x, y = x % 256, y % 256
+ 
+   local xl, xh = x % 16, math.floor(x / 16) % 16
+   local i = (y * 16) + (xh * 46 * 16) + xl
+   local pos = 0x20F6E34 + math.floor(i / 8)
+   local mask = math.pow(2, math.floor(i % 8))
+   return pos, mask
+ end
+ 
+ gui.register(function()
+   local x = memory.readbyte(0x0210F018)
+   local y = memory.readbyte(0x0210F014)
+   local i = (y * 16) + x
+   local pos, mask = cvdosPosToMapFlag(x, y)
+   agg.text(140, 5, string.format("%08X:%02x", pos, mask))
+   agg.text(140, 24, string.format("[%04X-%04X]", cvdosPosToMapFlag(x - (x % 0x10), 0) % 0x10000, cvdosPosToMapFlag(bit.bor(x, 0x0f), 255) % 0x10000))
+   agg.text(140, 43, string.format("[%04X-%04X]", cvdosPosToMapFlag(x - (x % 0x10) + 0x10, 0) % 0x10000, cvdosPosToMapFlag(bit.bor(x, 0x0f) + 0x10, 255) % 0x10000))
+   agg.text(140, 62, string.format("(%03d/%X,%03d)", x, x % 16, y))
+ end)
+
+! Memory addresses
+
+blah
+
+!! Special thanks
+
+blah
 
 
 
 
-I'd never thought that I would invent such a odd route.
+
+
+
+
+
+
+
+I had never thought that I would invent such a odd route.
 In fact, before I met DeSmuME-rerecording, I had never considered about the speedrun of the game.
 
 One day, I wanted to try recording a DS TAS movie with a new emulator,
