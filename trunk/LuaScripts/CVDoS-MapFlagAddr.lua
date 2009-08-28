@@ -1,6 +1,5 @@
 -- Address view for memory writing with zipping
--- This script doesn't show things with absolute accuracy.
--- Open the memory viewew to see what's actually going on.
+-- Open the memory viewer to see what's actually going on.
 
 if not emu then
   error("This script runs under DeSmuME.")
