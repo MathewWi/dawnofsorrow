@@ -98,6 +98,17 @@ I just discovered it after I finished the run, so I cannot tell you the detail a
 I assume that it happens under a limited pixel conditions.
 This trick might improve the run a little. I hope it will because it looks good.
 
+! Activate a switch behind the wall (not used)
+
+One of famous glitches. The Cutall/Cinquedea/Alucard Sword's special attack is teleporting behind an enemy and stabbing it.
+By utilizing that, you can activate a switch, which is on the other side of the wall.
+
+! Infinite jump glitch (not used)
+
+http://www.youtube.com/watch?v=HoyLggIDa9g
+
+I don't know the detail since I have never had a look at it.
+
 ! Zipping: General info
 
 When Soma goes outside the room, the game writes "visited" flag to abnormal location.
@@ -190,13 +201,92 @@ Note: As you can see in the run, Soma can move through the wall by sliding.
 
 ! Zipping: The Succubus glitch and its variations
 
-I got tired,
+All of these glitches cancels a special attack halfway to go into the wall.
+The difference is only how to cancel an attack.
+
+The steps to achieve the most famous Succubus glitch are:
+# Equip Cutall/Cinquedea/Alucard Sword and Succubus
+# Use its special attack then cancel the motion by Succubus immediately
+# Walk/Attack for about 2.5 seconds (do not stop, jump, backdash, and so on. It's important)
+# Use the special attack again against the wall
+# The special attack will be canceled in the wall if it succeed
+
+Axe also can be used to perform the glitch. Here is a [http://www.youtube.com/watch?v=l7eTxjuXPsA|demonstration video (youtube)].
+When you use Axe, you'll need to switch your equipment during the glitch, because Axe's special attack is too long.
+
+Axe also can be used to perform the glitch. However, you'll need to unequip the Axe once
+after you used a special attack (it's good to use Doppelganger to unequip a weapon quickly, by the way),
+because Axe's special attack is too long.
+
+A cutscene after the boss fight also cancels the special attack (it's the core of the run).
+It can be used earlier since it doesn't require a Succubus soul.
+
+Additionally, there are some special locations you can perform the zipping
+(flat ground + door, narrow gap + Skeleton Ape): http://www.youtube.com/watch?v=lkohuZnKPAg
+
+See also: [http://www.angelfire.com/stars5/tkcpics2/dawnofsorrow/|Castlevania: Dawn of Sorrow - Glitch Locations]
 
 ! Memory addresses
 
-blah
+Most of the zipping related addresses are shown above.
 
-!! Special thanks
+||Address||Length||Description||
+|020CAA40|4 bytes|X position|
+|020CAA44|4 bytes|Y position|
+|020CA95C|4 bytes|X position (next)|
+|020CA960|4 bytes|Y position (next)|
+|020CA968|2 bytes|X velocity|
+|020CA96C|2 bytes|Y velocity|
+|020C07E4|4 bytes|Random number|
+|020F703C|4 bytes|Ingame frame|
+|020CA9F3|1 byte|Soma invulnerability 1|
+|020CAA24|1 byte|Soma invulnerability 2|
+|020F7410|2 bytes|Current HP value|
+|020F7412|2 bytes|Max HP value|
+|020F7414|2 bytes|Current MP value|
+|020F7416|2 bytes|Max MP value|
+|020F7448|4 bytes|Current EXP value|
+|0210AF42|2 bytes|Left of sprite hitbox|
+|0210AF46|2 bytes|Right of sprite hitbox|
+|0210AF44|2 bytes|Top of sprite hitbox|
+|0210AF48|2 bytes|Bottom of sprite hitbox|
+|020F2A88|1 byte|Magic Seal Step|
+|020F2A8C|1 byte|Magical Seal Substep|
+|020CED88|4 bytes|Succubus timer|
+
+The following addresses might change randomly.
+
+||Address||Length||Description||
+|020D36A8|2 bytes|Flying Armor HP|
+|020D3513|1 byte|Flying Armor invincibility #1|
+|020D3514|1 byte|Flying Armor invincibility #2|
+|020D3515|1 byte|Flying Armor invincibility #3|
+|020D26E8|2 bytes|Balore HP|
+|020D2553|1 byte|Balore invincibility #1|
+|020D2554|1 byte|Balore invincibility #2|
+|020D2555|1 byte|Balore invincibility #3|
+|020D2EC8|2 bytes|Dmitrii HP|
+|020D2D33|1 byte|Dmitrii Invisibility #1|
+|020D2D34|1 byte|Dmitrii Invisibility #2|
+|020D2D35|1 byte|Dmitrii Invisibility #3|
+
+Also, I posted [=forum/p/204329#204329|some info about cheat codes] before.
+
+!! Stage by stage comments
+
+! Prologue
+
+In fact, the first Skeleton can be defeated 1 frame faster, by not jumping at second backdash and sliding earlier.
+
+Golem battle is one of my favorite parts. Soma attacks him with insane speed.
+
+! Lost Village - Up to Flying Armor
+
+Actually, Soma moves faster than a bone of Skeleton soul. So it's rather difficult to throw a bone optimally. After all, I tested all patterns I came up with. I am not so smart :P
+
+The Axe Armor room is very luck-manipulative room. You need to manipulate the randomness to obtain Axe Armor soul and Axe, and also to manipulate Zombies' positions.
+
+!! Comments / Special thanks
 
 blah
 
