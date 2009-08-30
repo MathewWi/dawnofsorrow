@@ -221,16 +221,16 @@ f:id:GOCHA:20090830170336p:image
 
 ** スペシャルサンクス
 
-- Satoryu: <a class="ex-ref" href="http://www.youtube.com/watch?v=Qa0GjrK6KoY">Satoryuさんの実機スピードラン（multi-segment）</a>はこの動画とGrooboさんの動画の礎になっています。
-- Groobo: <a class="ex-ref" href="http://www.youtube.com/watch?v=ws4714qAvk4">Grooboさんの追記動画</a>はこの動画の基盤になりました。
-- 蒼月トピの皆様: 親切にしてくれて大助かりです。とくに最初に動画を投げたAtmaさんがいなかったら、たぶんやってなかったと思います。
-- #TASers: きゅんきゅん癒し空間。ピロ彦先生がロックマン2で開拓した動画編集方法はじつにたのしくてよいです ヽ(＞ヮ＜)
+:Satoryu: <a class="ex-ref" href="http://www.youtube.com/watch?v=Qa0GjrK6KoY">Satoryuさんの実機スピードラン（multi-segment）</a>はこの動画とGrooboさんの動画の礎になっています。
+:Groobo: <a class="ex-ref" href="http://www.youtube.com/watch?v=ws4714qAvk4">Grooboさんの追記動画</a>はこの動画の基盤になりました。
+:蒼月トピの皆様: 親切にしてくれて大助かりです。とくに最初に動画を投げたAtmaさんがいなかったら、たぶんやってなかったと思います。
+:#TASers: きゅんきゅん癒し空間。ピロ彦先生がロックマン2で開拓した動画編集方法はじつにたのしくてよいです ヽ(＞ヮ＜)
 
 たのしんでもらえるとうれしいです。
 
 ** スクリーンショット
 
-[[http://i568.photobucket.com/albums/ss123/gochaism/Castlevania-DawnOfSorrowU_1500.png]] [[http://i568.photobucket.com/albums/ss123/gochaism/Castlevania-DawnOfSorrowU_3377.png]] [[http://i568.photobucket.com/albums/ss123/gochaism/Castlevania-DawnOfSorrowU_4928.png]] [[http://i568.photobucket.com/albums/ss123/gochaism/Castlevania-DawnOfSorrowU_9405.png]] [[http://i568.photobucket.com/albums/ss123/gochaism/Castlevania-DawnOfSorrowU_12746.png]] [[http://i568.photobucket.com/albums/ss123/gochaism/Castlevania-DawnOfSorrowU_16334.png]] [[http://i568.photobucket.com/albums/ss123/gochaism/Castlevania-DawnOfSorrowU_17744.png]] [[http://i568.photobucket.com/albums/ss123/gochaism/Castlevania-DawnOfSorrowU_19586.png]] [[http://i568.photobucket.com/albums/ss123/gochaism/Castlevania-DawnOfSorrowU_21653.png]] [[http://i568.photobucket.com/albums/ss123/gochaism/Castlevania-DawnOfSorrowU_23371.png]] [[http://i568.photobucket.com/albums/ss123/gochaism/Castlevania-DawnOfSorrowU_27064.png]] [[http://i568.photobucket.com/albums/ss123/gochaism/Castlevania-DawnOfSorrowU_28000.png]] [[http://i568.photobucket.com/albums/ss123/gochaism/Castlevania-DawnOfSorrowU_Bonus.png]]
+[http://i568.photobucket.com/albums/ss123/gochaism/Castlevania-DawnOfSorrowU_1500.png:image] [http://i568.photobucket.com/albums/ss123/gochaism/Castlevania-DawnOfSorrowU_3377.png:image] [http://i568.photobucket.com/albums/ss123/gochaism/Castlevania-DawnOfSorrowU_4928.png:image] [http://i568.photobucket.com/albums/ss123/gochaism/Castlevania-DawnOfSorrowU_9405.png:image] [http://i568.photobucket.com/albums/ss123/gochaism/Castlevania-DawnOfSorrowU_12746.png:image] [http://i568.photobucket.com/albums/ss123/gochaism/Castlevania-DawnOfSorrowU_16334.png:image] [http://i568.photobucket.com/albums/ss123/gochaism/Castlevania-DawnOfSorrowU_17744.png:image] [http://i568.photobucket.com/albums/ss123/gochaism/Castlevania-DawnOfSorrowU_19586.png:image] [http://i568.photobucket.com/albums/ss123/gochaism/Castlevania-DawnOfSorrowU_21653.png:image] [http://i568.photobucket.com/albums/ss123/gochaism/Castlevania-DawnOfSorrowU_23371.png:image] [http://i568.photobucket.com/albums/ss123/gochaism/Castlevania-DawnOfSorrowU_27064.png:image] [http://i568.photobucket.com/albums/ss123/gochaism/Castlevania-DawnOfSorrowU_28000.png:image] [http://i568.photobucket.com/albums/ss123/gochaism/Castlevania-DawnOfSorrowU_Bonus.png:image]
 
 ** スペシャル総評
 
@@ -241,4 +241,4 @@ f:id:GOCHA:20090830170336p:image
 ><p class="chat"><img alt="ももこ" src="http://gocha.is.land.to/icon/avatar/v1/momoko/icon-03.png" class="chat-icon">
 <span class="chat-text momoko">「わかんないです」</span></p><
 ><p class="chat"><img alt="gocha" src="http://gocha.is.land.to/icon/avatar/v1/gochatan/icon-30.png" class="chat-icon">
-<span class="chat-text gocha">「おまえら……！」</span></p><
+<span class="chat-text gocha">「おまえら……！（がんばったのにっ！）」</span></p><
