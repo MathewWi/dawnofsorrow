@@ -1,4 +1,6 @@
 
+__Special Links__: Youtube, NicoNico (w/o register), ì˙ñ{åÍ
+
 Castlevania: Dawn of Sorrow is a one of famous Castlevania games,
 and it is also the sequel to [1129M|Castlevania: Aria of Sorrow (GBA)].
 
@@ -37,7 +39,7 @@ The run completes the game in the following process.
 It is well known that the famous zipping glitch, which is called Succubus glitch,
 allows you to obtain a bunch of souls and items immediately.
 That Succubus glitch is used in a few of speedruns. However, they needed to get to
-The Pinnacle to obtain Succubus soul.
+The Pinnacle to obtain Succubus' soul.
 
 While making this run, I invented a variation of Succubus glitch,
 a method to interrupt special attack by a cutscene.
@@ -90,6 +92,13 @@ Backdash+crouching is a handy way to manipulate randomness without losing speed 
 The fastest way to change randomness greatly is something like autofiring the left or right key
 at the right timing (I did not use such in the run, so I am quite not sure).
 
+! Crystal blocks
+
+Crystal blocks are shattered by touching the screen (Balore's soul needed).
+In a tool-assisted speedrun, so many blocks can be shattered immediately, by moving the stylus incredibly fast.
+
+[http://img.f.hatena.ne.jp/images/fotolife/G/GOCHA/20090830/20090830170336.png]
+
 ! Go down floating footholds without losing speed (not used)
 
 Here is the [http://www.youtube.com/watch?v=paUs8h3Quqg|demonstration video (youtube)].
@@ -118,6 +127,9 @@ In other words, the write address is determined from Soma's location.
 I studied how to calculate the exact write address from Soma's position,
 and wrote up a lua script which shows the write address in realtime.
 It definitely helped me to consider the optimal route of the zipping part.
+
+When Soma goes to the right as long as one room, the write bit gets shifted to the left.
+However, the range of the write address changes per 16 rooms (i.e. 2 bytes). Read the script below for details.
 
  -- Address view for memory writing with zipping
  -- Open the memory viewer to see what's actually going on.
@@ -185,17 +197,18 @@ Here are some of addresses I planned to (not) manipulate in the run.
 |020F721B|lower 4 bits|Rosary|
 |020F7226|lower 4 bits|Chaos Ring|
 | | | |
-|020F6E20|1 bytes|Room X position (for start from suspend)|
-|020F6E22|1 bytes|Room Y position (for start from suspend)|
+|020F6E20|1 byte|Room X position (for start from suspend)|
+|020F6E22|1 byte|Room Y position (for start from suspend)|
 |020F6DFC|4 bytes|If the value bitand 0x44000007 is non-zero, disable Suspend|
 |020F7018|4 bytes|X position for start from suspend|
 |020F701C|4 bytes|Y position for start from suspend|
 |020F703C|4 bytes|Ingame time|
 |020F7187|bit2[|]bit3 (04[|]08)|Save Room & Warp Room first time message flag|
+|020F718A|1 byte|Menace related flags ($30 is the best value to skip him)|
 |020F71A8|2 bytes|Activated warp destinations (bit11/$0800 = The Abyss)|
 |020F7228|2 bytes * 6|Button settings|
 |020F7256|2 bytes|Disable Suspend/Pause (Julius Mode)|
-|020F7259|1 bytes|Hard Mode if nonzero|
+|020F7259|1 byte|Hard Mode if nonzero|
 
 Note: As you can see in the run, Soma can move through the wall by sliding.
 
@@ -219,7 +232,7 @@ after you used a special attack (it's good to use Doppelganger to unequip a weap
 because Axe's special attack is too long.
 
 A cutscene after the boss fight also cancels the special attack (it's the core of the run).
-It can be used earlier since it doesn't require a Succubus soul.
+It can be used earlier since it doesn't require a Succubus' soul.
 
 Additionally, there are some special locations you can perform the zipping
 (flat ground + door, narrow gap + Skeleton Ape): http://www.youtube.com/watch?v=lkohuZnKPAg
@@ -276,29 +289,106 @@ Also, I posted [=forum/p/204329#204329|some info about cheat codes] before.
 
 ! Prologue
 
-In fact, the first Skeleton can be defeated 1 frame faster, by not jumping at second backdash and sliding earlier.
+In fact, the first Skeleton can be defeated 1 frame faster,
+by not jumping at second backdash and sliding earlier.
 
 Golem battle is one of my favorite parts. Soma attacks him with insane speed.
 
 ! Lost Village - Up to Flying Armor
 
-Actually, Soma moves faster than a bone of Skeleton soul. So it's rather difficult to throw a bone optimally. After all, I tested all patterns I came up with. I am not so smart :P
+Actually, Soma moves faster than a bone of Skeleton's soul.
+So it's rather difficult to throw a bone optimally.
+After all, I tested all patterns I came up with. I am not so smart :P
 
-The Axe Armor room is very luck-manipulative room. You need to manipulate the randomness to obtain Axe Armor soul and Axe, and also to manipulate Zombies' positions.
+It might be better to defeat Peeping Eye by using Knife (with backdash and 2 frame jump)
+instead of Armor Knight, but I am not sure.
 
-!! Comments / Special thanks
+The Axe Armor room is very luck-manipulative room. You need to manipulate the randomness to
+obtain Axe Armor's soul and Axe, and also to manipulate Zombies' positions.
+I manipulated the randomness hard by brandishing a knife here and there, but
+I could not manage to eliminate one zombie who is just after Axe. Also,
+this is the first room I really wanted a lag-free emulator :P
 
-blah
+Upgrading Axe Armor's soul here (and possibly in Wizardry Lab) might save time later
+(if a lag-free version of the emulator is used).
+Perhaps it will make that luck-manipulative room even harder. *shivers*
 
+Stylus can be used in the menu screen. It is sometimes faster than using keys.
 
+! Lost Village & Wizardry Lab - From Flying Armor, up to Balore
 
+As Atma told me in the forum, in the Flying Armor battle, I need to manipulate him to position
+as low as possible to make attacking him easier, and defeat him with scrolling to the left
+as far as is possible.
+I tried hard but I could not get to the most left side of the room.
+A better luck might improve the battle a little.
 
+You may think that I can perform the cutscene zipping with Flying Armor.
+That is right, but I cannot do anything during the zipping so that it takes a few minutes to return.
+Additionally, I can get nothing there (the range of write address: 020f6e34-020f7033).
 
+After I used Flying Armor, I switched it back to Armor Knight soon,
+to make the Balore battle a bit faster and to cancel damage motions.
+I considered that it is faster than keeping Flying Armor equipped.
 
+If I can go down floating footholds without losing speed here and there, it will save 10-20 frames.
 
+! Wizardry Lab & Garden of Madness - From Balore, up to the save room
 
+Balore is defeated without Mind Up.
+It makes the battle about 3 seconds longer, but later I can gain about 10 seconds.
+After I defeated Balore, there is a chance to leave a message on crystal blocks.
+However, I did not do that since it lags too much.
+This is one of obvious improvable point, isn't it? ;)
 
+In the Slaughterer room, it might be better to take damage instead of defeat them.
+It gives Soma less exps, and it might allow us to defeat more enemies later.
+By the way, it was a little hard to manipulate Slaughterer's position and hitbox.
+If you want to make a tas of the game, I suggest to you writing a hitbox display lua.
 
+To activate the suspend command, I saved the game in Garden of Madness. Even a zipping cannot skip this process. That is known via memory value.
+
+! Garden of Madness & The Dark Chapel - Up to the end of the Dmitrii battle
+
+I didn't defeat enemies much because it causes a levelup and it freezes Soma for a few seconds.
+Also, I didn't equip Breastplate because it takes time a little to equip and I assumed that it doesn't save time after all.
+
+I did not go up until the last axe hits Yorick. If I go, the collision detection will be skipped and I cannot defeat him.
+
+! Outside of the world - The zipping part
+
+It's the most difficult section to explain... Well, read the general info section about zipping above first of all.
+
+What I did in the run are:
+
+# Obtain Black Panther
+# Obtain Hippogryph (optional; I think it saves time rather than not use it, or more than obtaining Malphas instead)
+# Set $30 to $020F718A to skip Menace (as a result, the game considers the first conversation and the battle are already done)
+# Activate the warp to The Abyss
+
+What I did __not__ do in the run (because it seems to take time to do that) are:
+
+* Obtain Malphas
+* Skip the "Warp Room" description of the first time
+
+I sometimes stopped to not overwrite the starting position after suspend much.
+
+I constructed this route in the following steps:
+
+# List up all possible useful locations (and dangerous locations as well)
+# Divide them into 4 groups (odd number address or even number address, in higher 4 bit or in lower 4 bit)
+# Count the minimum horizontal distance to get to each location, and group them by it (in the 16-bit alignment)
+# See what is near/far each other and consider about how to visit them
+
+One vertical loop takes a few seconds, so that I think it is not so smart to wait again and again to visit more locations.
+
+! The finale
+
+In the room of lift, I compared which is faster, going from the upper or lower. They were the same.
+
+When I fall from high position, I cancel Black Panther immediately just before the landing and cancel the motion.
+
+! Comments
 
 I had never thought that I would invent such a odd route.
 In fact, before I met DeSmuME-rerecording, I had never considered about the speedrun of the game.
@@ -318,7 +408,31 @@ and the other is the one called "Succubus glitch" which allows us to go through/
 and get a bunch of souls and items (details are described later).
 My original aim was to optimize his speedrun, and I assumed the completion time would be 20+ minutes at best.
 
-However, a revolution happens by chance.
-When I was playing with Succubus glitch to understand how it works, I noticed that a zipping could be performed with Axe.
-On the other hand, I guessed that a cutscene after a boss battle also can interrupt a special attack.
-I tried to perform that at Flying Armor battle with Axe, and I proved that my guess was true.
+However, that was not true. I'd like to thank all people who supported/encouraged me. I could not make the run without them.
+
+! Special thanks
+
+* Satoryu: for [http://www.youtube.com/watch?v=Qa0GjrK6KoY|his non tool-assisted speedrun]
+* Groobo: for [http://www.youtube.com/watch?v=ws4714qAvk4|his semi tool-assisted speedrun]
+* People in the Dawn of Sorrow topic: You guys are always kind. Especially, I thank Atma for posting his first TAS attempt of the game. That motivated me a lot.
+* #TASers: A Japanese IRC channel. They motivate me always! Especially, I thank pirohiko for inventing a new style of video editing! ÅR(ÅÑÉéÅÉ)
+
+Hope you enjoy the run, thank you!
+
+! Screenshots
+
+[user:gocha]: Hi! I am an idiot. I took a few screenshots of this movie and placed them here. Here goes! Feel free to clean up the list.
+
+[http://i568.photobucket.com/albums/ss123/gochaism/Castlevania-DawnOfSorrowU_1500.png]
+[http://i568.photobucket.com/albums/ss123/gochaism/Castlevania-DawnOfSorrowU_3377.png]
+[http://i568.photobucket.com/albums/ss123/gochaism/Castlevania-DawnOfSorrowU_4928.png]
+[http://i568.photobucket.com/albums/ss123/gochaism/Castlevania-DawnOfSorrowU_9405.png]
+[http://i568.photobucket.com/albums/ss123/gochaism/Castlevania-DawnOfSorrowU_12746.png]
+[http://i568.photobucket.com/albums/ss123/gochaism/Castlevania-DawnOfSorrowU_16334.png]
+[http://i568.photobucket.com/albums/ss123/gochaism/Castlevania-DawnOfSorrowU_17744.png]
+[http://i568.photobucket.com/albums/ss123/gochaism/Castlevania-DawnOfSorrowU_19586.png]
+[http://i568.photobucket.com/albums/ss123/gochaism/Castlevania-DawnOfSorrowU_21653.png]
+[http://i568.photobucket.com/albums/ss123/gochaism/Castlevania-DawnOfSorrowU_23371.png]
+[http://i568.photobucket.com/albums/ss123/gochaism/Castlevania-DawnOfSorrowU_27064.png]
+[http://i568.photobucket.com/albums/ss123/gochaism/Castlevania-DawnOfSorrowU_28000.png]
+[http://i568.photobucket.com/albums/ss123/gochaism/Castlevania-DawnOfSorrowU_Bonus.png]
