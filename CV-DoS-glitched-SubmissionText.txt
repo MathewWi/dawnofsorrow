@@ -1,6 +1,4 @@
 
-__Special Links__: Youtube, NicoNico (w/o register), “ú–{Œê
-
 Castlevania: Dawn of Sorrow is a one of famous Castlevania games,
 and it is also the sequel to [1129M|Castlevania: Aria of Sorrow (GBA)].
 
@@ -346,7 +344,8 @@ It gives Soma less exps, and it might allow us to defeat more enemies later.
 By the way, it was a little hard to manipulate Slaughterer's position and hitbox.
 If you want to make a tas of the game, I suggest to you writing a hitbox display lua.
 
-To activate the suspend command, I saved the game in Garden of Madness. Even a zipping cannot skip this process. That is known via memory value.
+To activate the suspend command, I saved the game in Garden of Madness.
+Even a zipping cannot skip this process. That is known via memory value.
 
 ! Garden of Madness & The Dark Chapel - Up to the end of the Dmitrii battle
 
