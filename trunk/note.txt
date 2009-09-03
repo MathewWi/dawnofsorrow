@@ -8,15 +8,31 @@ Our glitched run used 0.9.4+.
 DO NOT UPLOAD THE ROM TO THE PROJECT.
 DO NOT ASK HOW TO DOWNLOAD THE ROM.
 
-=== Save RAM ===
+=== Note about Save RAMs ===
 
-CV-DoS-CleanHardMode-Hacked.sav was made in the following steps:
+CV-DoS-CleanHardMode.sav is a save data which has no money, no souls and no items.
+CV-DoS-CleanHardMode.dsm is the movie which shows how this was created.
+However, it doesn't reset ingame time, enemy database and "Library" database.
 
- 1. Play CV-DoS-glitched-tas.dsm until Dmitrii get defeated, and stop it.
- *2. Write $10 to $020F70EB (Black Panther) just for convenience, then equip the soul.
- 2. Go to the nearest save room from the warp. Use Potion and Mind Up.
- 3. Unequip all souls, items and abilities
- 4. Write zero to $020F71E0-020F7216 (eliminate all weapons and armors)
+Then, I made CV-DoS-CleanHardMode-Hacked.sav in the following steps:
+
+  1. Play CV-DoS-glitched-tas.dsm until Dmitrii get defeated, and stop the movie
+  2. Use Potion and Mind Up and go to the nearest save room from the warp
+  3. Unequip all souls, items and abilities
+  4. Write zero to $020F71E0-020F7226 (eliminate all weapons, armors and accessories)
+  5. Write zero to $020F71BC-020F71D1 (eliminate all items)
+  6. Write zero to $020F70D0-020F710F (eliminate all souls)
+  7. Write zero to $020F7150-020F715E (clear enemy database)
+  8. Write zero to $020F71AC-020F71B3 (clear "Library" database)
+  9. Write zero to $020F744C-020F744F (no money)
+  9. Activate a cheat code which always overwrites $020F703C to zero (to reset ingame time)
+ 10. Save the game
+ 11. Write $08 to $020F71A9 (activate the warp to The Abyss)
+ 12. Write $30 to $020F718A and go to the last room (complete the game without the last battle)
+     Note: no moneys and other things are obtained on the way
+ 13. Export save file after the data has been saved
+
+It still has a map data but it's not a problem since the game reset it on new game+.
 
 === Julius Mode Memorandom ===
 
