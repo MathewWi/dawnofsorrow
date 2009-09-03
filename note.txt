@@ -33,7 +33,7 @@ Then, I made CV-DoS-CleanHardMode-Hacked.sav in the following steps:
      Note: no moneys and other things are obtained on the way
  15. Export save file after the data has been saved
 
-It still has a map data but it's not a problem since the game reset it on new game+.
+It still has map data but it's not a problem since the game reset it on new game+.
 
 === Julius Mode Memorandom ===
 
