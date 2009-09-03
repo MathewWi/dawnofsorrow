@@ -8,6 +8,16 @@ Our glitched run used 0.9.4+.
 DO NOT UPLOAD THE ROM TO THE PROJECT.
 DO NOT ASK HOW TO DOWNLOAD THE ROM.
 
+=== Save RAM ===
+
+CV-DoS-CleanHardMode-Hacked.sav was made in the following steps:
+
+ 1. Play CV-DoS-glitched-tas.dsm until Dmitrii get defeated, and stop it.
+ *2. Write $10 to $020F70EB (Black Panther) just for convenience, then equip the soul.
+ 2. Go to the nearest save room from the warp. Use Potion and Mind Up.
+ 3. Unequip all souls, items and abilities
+ 4. Write zero to $020F71E0-020F7216 (eliminate all weapons and armors)
+
 === Julius Mode Memorandom ===
 
 Julius:
