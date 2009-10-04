@@ -79,7 +79,7 @@ local RAM = { RNG = 0x020c07e4 }
 if RNGSeed ~= nil then
 	DoS_RandomSeed(RNGSeed)
 else
-	DoS_RandomSeed(memory.readdword(RAM.RNG))
+	DoS_RandomSeed(bit.tobit(memory.readdword(RAM.RNG)))
 end
 for i = 1, RNGAdvance do
 	DoS_Random()
