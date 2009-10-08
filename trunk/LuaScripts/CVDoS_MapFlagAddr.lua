@@ -5,13 +5,9 @@ if not emu then
   error("This script runs under DeSmuME.")
 end
 
--- require("bit")
-local bit = {}
-bit.band = AND
-bit.bor  = OR
-bit.bxor = XOR
-function bit.lshift(num, shift) return SHIFT(num, -shift) end
-function bit.rshift(num, shift) return SHIFT(num,  shift) end
+if not bit then
+	require("bit")
+end
 
 function cvdosPosToMapFlag(x, y)
   x, y = x % 256, y % 256
