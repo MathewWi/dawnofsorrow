@@ -118,6 +118,11 @@ gui.register(function()
 	chDrawSprite( sprw + ch_x - camx - sprox, ch_y - camy - sproy, ch_spr, ch_dir >= 0)
 	chDrawSprite(-sprw + ch_x - camx - sprox, ch_y - camy - sproy, ch_spr, ch_dir < 0)
 
+	-- remove all Soma's shadows
+	for i = 0x020df780, 0x020df85f do
+		memory.writebyte(i, 0)
+	end
+
 	gui.opacity(1 * fade)
 	gui.box(ch_x - camx - sprox, ch_y - camy - sproy, ch_x - camx - sprox + sprw - 1, ch_y - camy - sproy + sprh - 1, "clear", "#ff000080")
 	-- gui.box(ch_hitx1 - camx, ch_hity1 - camy, ch_hitx2 - camx, ch_hity2 - camy, "clear", "green")
