@@ -119,8 +119,8 @@ gui.register(function()
 	chDrawSprite(-sprw + ch_x - camx - sprox, ch_y - camy - sproy, ch_spr, ch_dir < 0)
 
 	-- remove all Soma's shadows
-	for i = 0x020df780, 0x020df85f do
-		memory.writebyte(i, 0)
+	for i = 0x020df77c, 0x020df85c, 0x10 do
+		memory.writedword(i, 0x00000000)
 	end
 
 	gui.opacity(1 * fade)
