@@ -2,12 +2,15 @@
 -- Simple RAM Display (good for livestreaming!)
 
 local opacityMaster = 0.68
+local showHitboxes = true
 gui.register(function()
 	local frame = emu.framecount()
 	local lagframe = emu.lagcount()
 	local moviemode = ""
 
 	local igframe = memory.readdword(0x021119e0)
+	local camx = math.floor(memory.readdwordsigned(0x020f707c) / 0x1000)
+	local camy = math.floor(memory.readdwordsigned(0x020f7080) / 0x1000)
 	local posx = memory.readdwordsigned(0x020ca95c)
 	local posy = memory.readdwordsigned(0x020ca960)
 	local velx = memory.readdwordsigned(0x020ca968)
@@ -47,10 +50,34 @@ gui.register(function()
 			local base = basead + i * 0x2a0
 			if memory.readword(base) > 0
 				and memory.readbyte(base-8) ~= 0
-			then -- hp display
+			then
+				-- hp display
 				gui.text(171, dispy, string.format("%X %03d %08X", i, memory.readword(base), memory.readdword(base-0x238)))
 				dispy = dispy + 10
 			end
+		end
+
+		-- enemy's hitbox
+		if showHitboxes then
+			for i = 0, 63 do
+				local rectad = 0x0210b2ee + (i * 0x14)
+				local left = memory.readwordsigned(rectad+0) - camx
+				local top = memory.readwordsigned(rectad+2) - camy
+				local right = memory.readwordsigned(rectad+4) - camx
+				local bottom = memory.readwordsigned(rectad+6) - camy
+				if top >= 0 then
+					gui.box(left, top, right, bottom, "clear", "#00ff00aa")
+				end
+			end
+		end
+
+		-- Soma's hitbox
+		if showHitboxes then
+			local left = memory.readwordsigned(0x0210af42) - camx
+			local top = memory.readwordsigned(0x0210af44) - camy
+			local right = memory.readwordsigned(0x0210af46) - camx
+			local bottom = memory.readwordsigned(0x0210af48) - camy
+			gui.box(left, top, right, bottom, "clear", "#00ff00aa")
 		end
 	end
 end)
