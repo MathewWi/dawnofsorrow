@@ -44,9 +44,9 @@ gui.register(function()
 		))
 
 		-- enemy info
-		local basead = 0x020d26e8
+		local basead = 0x020d2448
 		local dispy = 26
-		for i = 0, 19 do
+		for i = 0, 63 do
 			local base = basead + i * 0x2a0
 			if memory.readword(base) > 0
 				and memory.readbyte(base-8) ~= 0
