@@ -52,7 +52,11 @@ gui.register(function()
 				and memory.readbyte(base-8) ~= 0
 			then
 				-- hp display
-				gui.text(171, dispy, string.format("%X %03d %08X", i, memory.readword(base), memory.readdword(base-0x238)))
+				local en_hp = memory.readword(base)
+				local en_mp = memory.readword(base+2)
+				local en_x = memory.readdword(base-0x238)
+				gui.text(193, dispy, string.format("%02X %03d %03d", i, en_hp, en_mp))
+				-- gui.text(171, dispy, string.format("%X %03d %08X", i, en_hp, en_x))
 				dispy = dispy + 10
 			end
 		end
