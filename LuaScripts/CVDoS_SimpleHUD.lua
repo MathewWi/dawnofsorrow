@@ -54,9 +54,9 @@ gui.register(function()
 				-- hp display
 				local en_hp = memory.readword(base)
 				local en_mp = memory.readword(base+2)
-				local en_x = memory.readdword(base-0x238)
-				gui.text(183, dispy, string.format("%02X %4d %4d", i, en_hp, en_mp))
-				-- gui.text(171, dispy, string.format("%X %03d %08X", i, en_hp, en_x))
+				local en_x = memory.readdword(base-0x22c)
+				-- gui.text(183, dispy, string.format("%02X %4d %4d", i, en_hp, en_mp))
+				gui.text(171, dispy, string.format("%X %03d %08X", i, en_hp, en_x))
 				dispy = dispy + 10
 			end
 		end
