@@ -55,8 +55,16 @@ gui.register(function()
 				local en_hp = memory.readword(base)
 				local en_mp = memory.readword(base+2)
 				local en_x = memory.readdword(base-0x22c)
-				-- gui.text(183, dispy, string.format("%02X %4d %4d", i, en_hp, en_mp))
-				gui.text(171, dispy, string.format("%X %03d %08X", i, en_hp, en_x))
+				local en_dmtyp1 = memory.readbyte(base-0x198)
+				local en_dmtyp2 = memory.readbyte(base-0x197)
+				local en_dmtyp3 = memory.readbyte(base-0x196)
+				local en_inv1 = memory.readbyte(base-0x195)
+				local en_inv2 = memory.readbyte(base-0x194)
+				local en_inv3 = memory.readbyte(base-0x193)
+				-- gui.text(189, dispy, string.format("%02X %08X", i, base))
+				gui.text(183, dispy, string.format("%02X %4d %4d", i, en_hp, en_mp))
+				-- gui.text(171, dispy, string.format("%X %03d %08X", i, en_hp, en_x))
+				-- gui.text(123, dispy, string.format("%02X %4d %d/%02X %d/%02X %d/%02X", i, en_hp, en_dmtyp1, en_inv1, en_dmtyp2, en_inv2, en_dmtyp3, en_inv3))
 				dispy = dispy + 10
 			end
 		end
