@@ -3,6 +3,9 @@
 
 local opacityMaster = 0.68
 local showHitboxes = true
+
+local instatold = {}
+local enemyHUDMode = 3
 gui.register(function()
 	local frame = emu.framecount()
 	local lagframe = emu.lagcount()
@@ -22,6 +25,8 @@ gui.register(function()
 	local mode = memory.readbyte(0x020c07e8)
 	local fade = math.min(1.0, 1.0 - math.abs(memory.readbytesigned(0x020c0768)/16.0))
 
+	local instat = input.get()
+
 	moviemode = movie.mode()
 	if not movie.active() then moviemode = "no movie" end
 
@@ -37,6 +42,13 @@ gui.register(function()
 	gui.text(1, 26, string.format("%s\n%d", framestr, lagframe))
 
 	if mode == 2 then
+		if instat.rightclick and not instatold.rightclick then
+			enemyHUDMode = enemyHUDMode + 1
+			if enemyHUDMode > 5 then
+				enemyHUDMode = 1
+			end
+		end
+
 		gui.opacity(opacityMaster * (fade/2 + 0.5))
 
 		gui.text(1, 60, string.format("(%6d,%6d) %d %04X\nHP%03d/MP%03d",
@@ -62,11 +74,17 @@ gui.register(function()
 				local en_inv1 = memory.readbyte(base-0x195)
 				local en_inv2 = memory.readbyte(base-0x194)
 				local en_inv3 = memory.readbyte(base-0x193)
-				-- gui.text(189, dispy, string.format("%02X %08X", i, base))
-				-- gui.text(183, dispy, string.format("%02X %4d %4d", i, en_hp, en_mp))
-				gui.text(171, dispy, string.format("%X %03d %08X", i, en_hp, en_x))
-				-- gui.text(171, dispy, string.format("%X %03d %8d", i, en_hp, en_vx))
-				-- gui.text(123, dispy, string.format("%02X %4d %d/%02X %d/%02X %d/%02X", i, en_hp, en_dmtyp1, en_inv1, en_dmtyp2, en_inv2, en_dmtyp3, en_inv3))
+				if enemyHUDMode == 1 then
+					gui.text(189, dispy, string.format("%02X %08X", i, base))
+				elseif enemyHUDMode == 2 then
+					gui.text(183, dispy, string.format("%02X %4d %4d", i, en_hp, en_mp))
+				elseif enemyHUDMode == 3 then
+					gui.text(171, dispy, string.format("%X %03d %08X", i, en_hp, en_x))
+				elseif enemyHUDMode == 4 then
+					gui.text(171, dispy, string.format("%X %03d %8d", i, en_hp, en_vx))
+				elseif enemyHUDMode == 5 then
+					gui.text(123, dispy, string.format("%02X %4d %d/%02X %d/%02X %d/%02X", i, en_hp, en_dmtyp1, en_inv1, en_dmtyp2, en_inv2, en_dmtyp3, en_inv3))
+				end
 				dispy = dispy + 10
 			end
 		end
@@ -94,4 +112,6 @@ gui.register(function()
 			gui.box(left, top, right, bottom, "clear", "#00ff00aa")
 		end
 	end
+
+	instatold = copytable(instat)
 end)
