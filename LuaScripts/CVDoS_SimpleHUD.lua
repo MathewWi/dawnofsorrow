@@ -61,30 +61,34 @@ gui.register(function()
 		for i = 0, 63 do
 			local base = basead + i * 0x2a0
 			if memory.readword(base) > 0
-				and memory.readbyte(base-8) ~= 0
+				and (memory.readdword(base-0x22c) ~= 0 or memory.readdword(base-0x228) ~= 0)
 			then
 				-- hp display
 				local en_hp = memory.readword(base)
 				local en_mp = memory.readword(base+2)
 				local en_x = memory.readdword(base-0x22c)
+				local en_y = memory.readdword(base-0x228)
 				local en_vx = memory.readdwordsigned(base-0x220)
+				local en_vy = memory.readdwordsigned(base-0x21c)
 				local en_dmtyp1 = memory.readbyte(base-0x198)
 				local en_dmtyp2 = memory.readbyte(base-0x197)
 				local en_dmtyp3 = memory.readbyte(base-0x196)
 				local en_inv1 = memory.readbyte(base-0x195)
 				local en_inv2 = memory.readbyte(base-0x194)
 				local en_inv3 = memory.readbyte(base-0x193)
+				local en_msg = ""
 				if enemyHUDMode == 1 then
-					gui.text(189, dispy, string.format("%02X %08X", i, base))
+					en_msg = string.format("%02X %08X", i, base)
 				elseif enemyHUDMode == 2 then
-					gui.text(183, dispy, string.format("%02X %4d %4d", i, en_hp, en_mp))
+					en_msg = string.format("%02X %4d %4d", i, en_hp, en_mp)
 				elseif enemyHUDMode == 3 then
-					gui.text(171, dispy, string.format("%X %03d %08X", i, en_hp, en_x))
+					en_msg = string.format("%X %03d %08X", i, en_hp, en_x)
 				elseif enemyHUDMode == 4 then
-					gui.text(171, dispy, string.format("%X %03d %8d", i, en_hp, en_vx))
+					en_msg = string.format("%X %03d %8d", i, en_hp, en_vx)
 				elseif enemyHUDMode == 5 then
-					gui.text(123, dispy, string.format("%02X %4d %d/%02X %d/%02X %d/%02X", i, en_hp, en_dmtyp1, en_inv1, en_dmtyp2, en_inv2, en_dmtyp3, en_inv3))
+					en_msg = string.format("%02X %4d %d/%02X %d/%02X %d/%02X", i, en_hp, en_dmtyp1, en_inv1, en_dmtyp2, en_inv2, en_dmtyp3, en_inv3)
 				end
+				gui.text(255 - (#en_msg * 6), dispy, en_msg)
 				dispy = dispy + 10
 			end
 		end
