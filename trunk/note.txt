@@ -3,7 +3,6 @@
 
 To record a movie, you need to download DeSmuME first.
 http://tasvideos.org/forum/t/8008
-Our glitched run used 0.9.4+.
 
 DO NOT UPLOAD THE ROM TO THE PROJECT.
 DO NOT ASK HOW TO DOWNLOAD THE ROM.
@@ -34,10 +33,3 @@ Then, I made CV-DoS-CleanHardMode-Hacked.sav in the following steps:
  15. Export save file after the data has been saved
 
 It still has map data but it's not a problem since the game reset it on new game+.
-
-=== Julius Mode Memorandom ===
-
-Julius:
-* backdash+jump: (11888+11488+11088+10688+10288+9888+9488+9088+8688+8288+7888+7488)/12 = 9688
-* doublejump+kick (B,B,null,B,null,down+B...): (6144*5+14336*3+11936+9536)/10 = 9520
-* backdash+crouching: (11888+11488+11088+10288+9888+9488+7088+0)/8 = 8902
