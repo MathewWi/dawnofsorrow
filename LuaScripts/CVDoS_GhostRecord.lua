@@ -15,7 +15,7 @@ function getFrameState()
 	e.igframe = memory.readdword(0x020f703c)
 	e.mode = memory.readbyte(0x020c07e8)
 	e.fade = memory.readbytesigned(0x020c0768)
-	e.region = memory.readbyte(0x02117866)
+	e.region = memory.readbyte(0x020f6e25)
 	e.roomx, e.roomy = memory.readbyte(0x020f6e20), memory.readbyte(0x020f6e22)
 	e.scrollx, e.scrolly = memory.readdwordsigned(0x020f707c), memory.readdwordsigned(0x020f7080)
 	e.player = {
