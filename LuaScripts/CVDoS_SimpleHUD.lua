@@ -11,7 +11,7 @@ gui.register(function()
 	local lagframe = emu.lagcount()
 	local moviemode = ""
 
-	local igframe = memory.readdword(0x021119e0)
+	local igframe = memory.readdword(0x020f703c)
 	local camx = math.floor(memory.readdwordsigned(0x020f707c) / 0x1000)
 	local camy = math.floor(memory.readdwordsigned(0x020f7080) / 0x1000)
 	local posx = memory.readdwordsigned(0x020ca95c)
