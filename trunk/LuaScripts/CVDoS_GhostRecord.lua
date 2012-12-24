@@ -25,7 +25,7 @@ function getFrameState()
 		hity1 = memory.readwordsigned(0x0210af44),
 		hitx2 = memory.readwordsigned(0x0210af46),
 		hity2 = memory.readwordsigned(0x0210af48),
-		dir = memory.readbytesigned(0x020ca96a),
+		dir = memory.readbytesigned(0x020ca9a0),
 		pose = memory.readword(0x020ca9a4),
 		who = 0 -- reserved, for Julius Mode
 	}

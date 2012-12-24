@@ -6,7 +6,7 @@
 root_dir = ""
 
 -- Ghost definitions
-ghost_dumps  = { "[3797S].ghost" }
+ghost_dumps  = { "[3797S].ghost", "[1364M].ghost" }
 
 -- Timing options
 sync_mode    = "ingame" -- realtime or ingame
@@ -17,7 +17,7 @@ show_delays = true
 
 -- Graphics options
 own_color = "white"
-ghost_color = { "red" }
+ghost_color = { "red", "blue" }
 ghost_opacity = 0.75
 
 -- These require gd
@@ -197,7 +197,7 @@ function getFrameState()
 		hity1 = memory.readwordsigned(0x0210af44),
 		hitx2 = memory.readwordsigned(0x0210af46),
 		hity2 = memory.readwordsigned(0x0210af48),
-		dir = memory.readbytesigned(0x020ca96a),
+		dir = memory.readbytesigned(0x020ca9a0),
 		pose = memory.readword(0x020ca9a4),
 		who = 0
 	}
