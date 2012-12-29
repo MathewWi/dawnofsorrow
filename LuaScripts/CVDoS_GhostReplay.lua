@@ -5,7 +5,7 @@
 root_dir = ""
 
 -- Ghost definitions
-ghost_dumps  = { "[3797S].ghost", "[1364M].ghost" }
+ghost_dumps  = { "[2085M].ghost", "[2205M].ghost", "JuliusMockRun.ghost", "[3797S].ghost", "[1364M].ghost" }
 
 -- Timing options
 sync_mode    = "ingame" -- realtime or ingame
@@ -16,7 +16,7 @@ show_delays = true
 
 -- Graphics options
 own_color = "white"
-ghost_color = { "red", "blue" }
+ghost_color = { "red", "blue", "green", "magenta", "yellow" }
 ghost_opacity = 0.75
 
 -- These require gd
