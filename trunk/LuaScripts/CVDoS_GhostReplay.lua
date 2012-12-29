@@ -1,6 +1,5 @@
 -- Castlevania - Dawn of Sorrow
 -- Ghost replay script, some parts come from amaurea's script.
--- NYI: Julius Mode
 
 -- Directory prefix
 root_dir = ""
@@ -22,7 +21,7 @@ ghost_opacity = 0.75
 
 -- These require gd
 ghost_gfx = 1 -- nil to turn off. Array to specify individually
-pose_info = { { "somadb.png", 128, 128, 64, 100 } }
+pose_info = { { "somadb.png", "julidb.png", "yokodb.png", "aludb.png", 128, 128, 64, 100 } }
 
 -- Draw log dump for AviUtl
 drawlog = nil--io.open(root_dir .. "aviutl_guidraw.lua", "w") -- nil to turn off. File handle to dump.
@@ -199,7 +198,7 @@ function getFrameState()
 		hity2 = memory.readwordsigned(0x0210af48),
 		dir = memory.readbytesigned(0x020ca9a0),
 		pose = memory.readword(0x020ca9a4),
-		who = 0
+		who = memory.readbyte(0x020f740e)
 	}
 	adjustFrameState(e)
 	return e
@@ -492,13 +491,25 @@ end
 
 function read_pose(info)
 	local im1 = gd.convertToTrueColor(gd.createFromPng(root_dir .. info[1]))
+	local im2 = gd.convertToTrueColor(gd.createFromPng(root_dir .. info[2]))
+	local im3 = gd.convertToTrueColor(gd.createFromPng(root_dir .. info[3]))
+	local im4 = gd.convertToTrueColor(gd.createFromPng(root_dir .. info[4]))
 
 	if im1 == nil then error("Cannot load image: " .. info[1]) end
+	if im2 == nil then error("Cannot load image: " .. info[2]) end
+	if im3 == nil then error("Cannot load image: " .. info[3]) end
+	if im4 == nil then error("Cannot load image: " .. info[4]) end
 
 	local im1rev = gd.convertToTrueColor(gd.createFromPng(root_dir .. info[1]))
+	local im2rev = gd.convertToTrueColor(gd.createFromPng(root_dir .. info[2]))
+	local im3rev = gd.convertToTrueColor(gd.createFromPng(root_dir .. info[3]))
+	local im4rev = gd.convertToTrueColor(gd.createFromPng(root_dir .. info[4]))
 	gd.flipHorizontal(im1rev)
+	gd.flipHorizontal(im2rev)
+	gd.flipHorizontal(im3rev)
+	gd.flipHorizontal(im4rev)
 
-	return { im1:gdStr(), im1rev:gdStr() }
+	return { im1:gdStr(), im1rev:gdStr(), im2:gdStr(), im2rev:gdStr(), im3:gdStr(), im3rev:gdStr(), im4:gdStr(), im4rev:gdStr() }
 end
 
 function draw_ghost_gfx(ghost,frame,index,logonly)
@@ -524,15 +535,16 @@ function draw_ghost_gfx(ghost,frame,index,logonly)
 	if emudata[1].mode ~= 2 then return end
 
 	local scrollx, scrolly = emudata[3].scrollx, emudata[3].scrolly
-	local dx, dy = pose_info[ghost.gfx][2], pose_info[ghost.gfx][3]
-	local ox, oy = pose_info[ghost.gfx][4], pose_info[ghost.gfx][5]
+	local dx, dy = pose_info[ghost.gfx][5], pose_info[ghost.gfx][6]
+	local ox, oy = pose_info[ghost.gfx][7], pose_info[ghost.gfx][8]
 	local players = { data.player }
 	for i, player in ipairs(players) do
 		local put = function(x, y)
 			if player.visible then
 				local xi, yi = player.pose % 0x10, math.floor(player.pose / 0x10)
 				local reverse = (player.dir >= 0)
-				local gi = 1 + ((i - 1) * 2) + (reverse and 1 or 0)
+				local giSub = player.who % 4
+				local gi = 1 + (giSub * 2) + (reverse and 1 or 0)
 				local opacity = ghost.opacity * math.min(1.0, 1.0 - math.abs(emudata[3].fade/16.0)) * (player.blink and 0.5 or 1.0)
 				if not reverse then
 					if logonly then
